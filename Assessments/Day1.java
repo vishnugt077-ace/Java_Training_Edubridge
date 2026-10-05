@@ -1,374 +1,220 @@
-//Q1. Array Statistics
-public class Q01 {
+//Q1 — AboutMe
+public class AboutMe {
     public static void main(String[] args) {
-
-        int[] marks = {78, 92, 65, 88, 71, 95, 59};
-
-        int sum = 0;
-        int max = marks[0];
-        int min = marks[0];
-
-        for (int m : marks) {
-            sum += m;
-
-            if (m > max)
-                max = m;
-
-            if (m < min)
-                min = m;
-        }
-
-        double average = (double) sum / marks.length;
-
-        System.out.println("Sum = " + sum);
-        System.out.printf("Average = %.2f%n", average);
-        System.out.println("Max = " + max);
-        System.out.println("Min = " + min);
+        System.out.println("Name : Ravi Kumar");
+        System.out.println("Course : Java Programming");
+        System.out.println("College : ABC Engineering College");
     }
 }
 //Output:
-Sum = 548
-Average = 78.29
-Max = 95
-Min = 59
+Name : Ravi Kumar
+Course : Java Programming
+College : ABC Engineering College
 
-  
-//Q2. Reverse an Array
-import java.util.Arrays;
-
-public class Q02 {
-
-    static void reverse(int[] a) {
-
-        int left = 0;
-        int right = a.length - 1;
-
-        while (left < right) {
-
-            int temp = a[left];
-            a[left] = a[right];
-            a[right] = temp;
-
-            left++;
-            right--;
-        }
-    }
-
+    
+//Q2 — DataTypes.java
+public class DataTypes {
     public static void main(String[] args) {
+        byte b = 10;
+        short s = 200;
+        int i = 1000;
+        long l = 100000L;
+        float f = 10.5f;
+        double d = 25.75;
+        char c = 'A';
+        boolean bool = true;
 
-        int[] a = {10, 20, 30, 40, 50};
-
-        System.out.println("Before: " + Arrays.toString(a));
-
-        reverse(a);
-
-        System.out.println("After : " + Arrays.toString(a));
+        System.out.println("byte : " + b);
+        System.out.println("short : " + s);
+        System.out.println("int : " + i);
+        System.out.println("long : " + l);
+        System.out.println("float : " + f);
+        System.out.println("double : " + d);
+        System.out.println("char : " + c);
+        System.out.println("boolean : " + bool);
     }
 }
 //Output:
-Before: [10, 20, 30, 40, 50]
-After : [50, 40, 30, 20, 10]
+byte : 10
+short : 200
+int : 1000
+long : 100000
+float : 10.5
+double : 25.75
+char : A
+boolean : true
 
-  
-//Q3. Linear Search
-public class Q03 {
-
-    static int search(int[] a, int key) {
-
-        for (int i = 0; i < a.length; i++) {
-
-            if (a[i] == key)
-                return i;
-        }
-
-        return -1;
-    }
-
+    
+//Q3 — SwapNumbers
+public class SwapNumbers {
     public static void main(String[] args) {
+        int a = 15;
+        int b = 40;
 
-        int[] a = {4, 8, 15, 16, 23, 42};
+        System.out.println("Before: a = " + a + ", b = " + b);
 
-        int[] keys = {23, 7};
+        int temp = a;
+        a = b;
+        b = temp;
 
-        for (int k : keys) {
+        System.out.println("After : a = " + a + ", b = " + b);
+    }
+}
+//Output:
+Before: a = 15, b = 40
+After : a = 40, b = 15
 
-            int index = search(a, k);
+    
+//Q4 — SimpleInterest
+public class SimpleInterest {
+    public static void main(String[] args) {
+        double P = 10000;
+        double R = 7.5;
+        double T = 3;
 
-            if (index != -1)
-                System.out.println(k + " found at index " + index);
+        double SI = (P * R * T) / 100;
+        double totalAmount = P + SI;
+
+        System.out.println("Simple Interest = " + SI);
+        System.out.println("Total Amount = " + totalAmount);
+    }
+}
+//Output:
+Simple Interest = 2250.0
+Total Amount = 12250.0
+
+    
+//Q5 — EvenOdd
+public class EvenOdd {
+    public static void main(String[] args) {
+        int a = 24;
+        int b = 37;
+
+        if (a % 2 == 0)
+            System.out.println(a + " is Even");
+        else
+            System.out.println(a + " is Odd");
+
+        if (b % 2 == 0)
+            System.out.println(b + " is Even");
+        else
+            System.out.println(b + " is Odd");
+    }
+}
+//Output:
+24 is Even
+37 is Odd
+
+    
+//Q6 — LargestOfThree
+public class LargestOfThree {
+    public static void main(String[] args) {
+        int a = 45;
+        int b = 89;
+        int c = 23;
+
+        if (a >= b && a >= c)
+            System.out.println("Largest number is " + a);
+        else if (b >= a && b >= c)
+            System.out.println("Largest number is " + b);
+        else
+            System.out.println("Largest number is " + c);
+    }
+}
+//Output:
+Largest number is 89
+
+    
+//Q7 — GradeCalculator
+public class GradeCalculator {
+    public static void main(String[] args) {
+        int[] marks = {92, 78, 55, 30};
+
+        for (int mark : marks) {
+            if (mark >= 90)
+                System.out.println(mark + " → Grade A");
+            else if (mark >= 75)
+                System.out.println(mark + " → Grade B");
+            else if (mark >= 50)
+                System.out.println(mark + " → Grade C");
             else
-                System.out.println(k + " not found");
+                System.out.println(mark + " → Grade F");
         }
     }
 }
 //Output:
-23 found at index 4
-7 not found
+92 → Grade A
+78 → Grade B
+55 → Grade C
+30 → Grade F
 
-  
-//Q4. Second Largest Element
-public class Q04 {
-
+    
+//Q8 — DayOfWeek
+public class DayOfWeek {
     public static void main(String[] args) {
+        int day = 3;
 
-        int[] a = {12, 35, 1, 10, 35, 34};
-
-        int first = Integer.MIN_VALUE;
-        int second = Integer.MIN_VALUE;
-
-        for (int x : a) {
-
-            if (x > first) {
-                second = first;
-                first = x;
-            }
-            else if (x > second && x != first) {
-                second = x;
-            }
+        switch (day) {
+            case 1:
+                System.out.println("Day 1 is Monday");
+                break;
+            case 2:
+                System.out.println("Day 2 is Tuesday");
+                break;
+            case 3:
+                System.out.println("Day 3 is Wednesday");
+                break;
+            case 4:
+                System.out.println("Day 4 is Thursday");
+                break;
+            case 5:
+                System.out.println("Day 5 is Friday");
+                break;
+            case 6:
+                System.out.println("Day 6 is Saturday");
+                break;
+            case 7:
+                System.out.println("Day 7 is Sunday");
+                break;
+            default:
+                System.out.println("Invalid day");
         }
-
-        System.out.println("Largest = " + first);
-        System.out.println("Second largest = " + second);
     }
 }
 //Output:
-Largest = 35
-Second largest = 34
+Day 3 is Wednesday
 
-  
-//Q5. Move Zeros to the End
-import java.util.Arrays;
-
-public class Q05 {
-
+    
+//Q9 — LeapYear
+public class LeapYear {
     public static void main(String[] args) {
+        int[] years = {2024, 1900, 2000};
 
-        int[] a = {0, 5, 0, 3, 12, 0, 7};
-
-        int pos = 0;
-
-        for (int i = 0; i < a.length; i++) {
-
-            if (a[i] != 0) {
-                a[pos] = a[i];
-                pos++;
-            }
-        }
-
-        while (pos < a.length) {
-            a[pos] = 0;
-            pos++;
-        }
-
-        System.out.println(Arrays.toString(a));
-    }
-}
-//Output:
-[5, 3, 12, 7, 0, 0, 0]
-
-  
-//Q6. 2D Array — Row and Column Totals
-public class Q06 {
-
-    public static void main(String[] args) {
-
-        int[][] m = {
-            {80, 75, 90},
-            {60, 85, 70},
-            {95, 65, 88}
-        };
-
-        int[] colSum = new int[3];
-
-        for (int r = 0; r < m.length; r++) {
-
-            int rowSum = 0;
-
-            for (int c = 0; c < m[r].length; c++) {
-
-                System.out.print(m[r][c] + "\t");
-
-                rowSum += m[r][c];
-                colSum[c] += m[r][c];
-            }
-
-            System.out.println("| " + rowSum);
-        }
-
-        System.out.println("-------------------------");
-
-        for (int x : colSum)
-            System.out.print(x + "\t");
-    }
-}
-//Output:
-80    75    90    | 245
-60    85    70    | 215
-95    65    88    | 248
--------------------------
-235   225   248
-  
-//Q7. Reverse String and Check Palindrome
-public class Q07 {
-
-    static String reverse(String s) {
-
-        String rev = "";
-
-        for (int i = s.length() - 1; i >= 0; i--) {
-            rev += s.charAt(i);
-        }
-
-        return rev;
-    }
-
-    public static void main(String[] args) {
-
-        String[] words = {"Madam", "Java"};
-
-        for (String w : words) {
-
-            String r = reverse(w);
-
-            if (w.equalsIgnoreCase(r))
-                System.out.println(w + " -> " + r + " : Palindrome");
+        for (int y : years) {
+            if ((y % 4 == 0 && y % 100 != 0) || y % 400 == 0)
+                System.out.println(y + " is a Leap Year");
             else
-                System.out.println(w + " -> " + r + " : Not a palindrome");
+                System.out.println(y + " is Not a Leap Year");
         }
     }
 }
 //Output:
-Madam -> madaM : Palindrome
-Java -> avaJ : Not a palindrome
+2024 is a Leap Year
+1900 is Not a Leap Year
+2000 is a Leap Year
 
-  
-//Q8. Count Vowels, Consonants, Digits and Spaces
-public class Q08 {
-
-    public static void main(String[] args) {
-
-        String s = "Java 21 is Awesome";
-
-        int vowels = 0;
-        int consonants = 0;
-        int digits = 0;
-        int spaces = 0;
-
-        for (int i = 0; i < s.length(); i++) {
-
-            char ch = Character.toLowerCase(s.charAt(i));
-
-            if (Character.isLetter(ch)) {
-
-                if ("aeiou".indexOf(ch) != -1)
-                    vowels++;
-                else
-                    consonants++;
-
-            } else if (Character.isDigit(ch)) {
-                digits++;
-
-            } else if (ch == ' ') {
-                spaces++;
-            }
-        }
-
-        System.out.println("Vowels = " + vowels);
-        System.out.println("Consonants = " + consonants);
-        System.out.println("Digits = " + digits);
-        System.out.println("Spaces = " + spaces);
-    }
-}
-//Output:
-Vowels = 7
-Consonants = 6
-Digits = 2
-Spaces = 3
-
-  
-//Q9. Character Frequency
-public class Q09 {
-
-    public static void main(String[] args) {
-
-        String s = "programming";
-
-        int[] freq = new int[26];
-
-        for (char ch : s.toCharArray()) {
-            freq[ch - 'a']++;
-        }
-
-        int best = 0;
-
-        for (int i = 0; i < 26; i++) {
-
-            if (freq[i] > 0) {
-
-                System.out.println(
-                    (char)('a' + i) + " = " + freq[i]
-                );
-
-                if (freq[i] > best)
-                    best = freq[i];
-            }
-        }
-
-        System.out.print("Most frequent: ");
-
-        for (int i = 0; i < 26; i++) {
-
-            if (freq[i] == best)
-                System.out.print((char)('a' + i) + " ");
-        }
-
-        System.out.println("(" + best + " times)");
-    }
-}
-//Output:
-a = 1
-g = 2
-i = 1
-m = 2
-n = 1
-o = 1
-p = 1
-r = 2
-Most frequent: g m r (2 times)
-
-  
-//Q10. Anagram Check
-import java.util.Arrays;
-
-public class Q10 {
-
-    static boolean isAnagram(String a, String b) {
-
-        if (a.length() != b.length())
-            return false;
-
-        char[] x = a.toLowerCase().toCharArray();
-        char[] y = b.toLowerCase().toCharArray();
-
-        Arrays.sort(x);
-        Arrays.sort(y);
-
-        return Arrays.equals(x, y);
-    }
-
-    public static void main(String[] args) {
-
-        System.out.println(
-            "Listen & Silent: " +
-            isAnagram("Listen", "Silent")
-        );
-
-        System.out.println(
-            "Hello & World : " +
-            isAnagram("Hello", "World")
-        );
-    }
-}
-//Output:
-Listen & Silent: true
-Hello & World : false
+    
+//Q10 — Theory
+(a) Output
+JDK → JRE → JVM
+(b) Output
+javac Hello.java → Hello.class
+java Hello → JVM executes the bytecode
+(c) Output
+1. Java uses automatic garbage collection; C++ supports manual memory management.
+2. Java programs run on JVM; C++ programs normally compile to native machine code.
+3. Java does not support multiple inheritance through classes; C++ supports it.
+(d) Output
+Java is platform independent because Java source code is compiled into bytecode.
+The bytecode can run on any operating system that has a compatible JVM.
+Therefore, Java follows the principle "Write Once, Run Anywhere".
